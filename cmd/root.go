@@ -7,7 +7,7 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:   "termNews",
-	Short: "A brief description of your application",
+	Short: "TermNews is a terminal based news reader",
 }
 
 func Execute() {
