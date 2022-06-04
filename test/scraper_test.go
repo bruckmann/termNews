@@ -1,16 +1,17 @@
 package test
 
 import (
+	"os"
 	"testing"
 
-	s "github.com/bruckmann/termNews/scraper"
+	"github.com/bruckmann/termNews/pkg/scraper"
 )
 
-func TestScraper(t *testing.T){
-  got := s.Extract() 
-  expected := "© Copyright 2000-2022 Globo Comunicação e Participações S.A."
-  if got != expected {
-    t.Errorf("expected: %s but got %s", expected, got)
+func TestScraper(t *testing.T) {
+  scraper.DownloadRSSNews()
+  _, got := os.Stat("./data/news-g1.xml")
+
+  if got != nil {
+    t.Errorf("DonwloadRSSNews: error: %s", got)
   }
 }
-

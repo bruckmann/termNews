@@ -1,13 +1,17 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
+
 	"github.com/spf13/cobra"
 )
 
-var rootCmd = &cobra.Command{
-	Use:   "termNews",
-	Short: "TermNews is a terminal based news reader",
+var rootCmd = &cobra.Command {
+	Use: "news",
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println("Hello! i'm termNews, a terminal based news reader.")
+	},
 }
 
 func Execute() {
@@ -20,5 +24,3 @@ func Execute() {
 func init() {
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
-
-
