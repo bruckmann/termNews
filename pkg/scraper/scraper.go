@@ -16,7 +16,7 @@ func DownloadRSSNews() {
   c := colly.NewCollector()
   
   if c != nil {
-    fmt.Printf("Collector created with success")
+    fmt.Println("Collector created with success")
   }
 
   c.OnResponse(func(r *colly.Response) {
